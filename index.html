@@ -3,32 +3,45 @@
 
 <head>
     <!-- Google AD -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4642090353649937" 
-        crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4642090353649937" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <meta charset="UTF-8">
     <meta https-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Gerador de Lorem </title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 
 <body>
-    <h1>Gerador de Lorem Ipsum</h1>
+    <header>
+        <h1>Gerador de Lorem Ipsum</h1>
+    </header>
+    <main>
+        <input type="text" id="chosen-number" required> <!--Número escolhido-->
 
-    <!--Gerar o texto-->
+        <div id="box-paragraph"> <!--Seletor parágrafo-->
+            <input type="radio" name="selector-type" id="paragraph-select">
+            <label for="paragraph-select">Parágrafos</label>
+        </div>
 
-    <input type="text" id="chosen-number" required> <!--Número escolhido-->
+        <div id="box-word"> <!--Seletor para palavras-->
+            <input type="radio" name="selector-type" id="word-select">
+            <label for="word-select">Palavras</label>
+        </div>
 
-    <input type="radio" name="selector-type" id="paragraph-select"> <!--Seletor parágrafo-->
-    <label for="paragraph-select">Parágrafos</label>
-    <input type="radio" name="selector-type" id="word-select"> <!--Seletor para palavras-->
-    <label for="word-select">Palavras</label>
+        <div>
+            <button type="button" id="generate-button">Gerar</button>
+            <!--Botão para copiar o texto-->
+            <button type="button" id="btn" data-clipboard-target="#lorem-ipsum">
+                <span class="material-icons md-18"> content_copy </span>
+                Copy
+            </button>
+        </div>
+        <div id="lorem-ipsum"></div>
 
-    <button type="button" id="generate-button">Gerar</button>
-
-    <div id="lorem-ipsum"></div>
-
-    <!--Restante do conteúdo-->
+        <!--Restante do conteúdo-->
+    </main>
 
     <script src="scripts/indexScript.js"></script>
 </body>

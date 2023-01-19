@@ -64,3 +64,5 @@ document.getElementById("generate-button").onclick = () => {
         return loremIpsum;
     }
 }
+
+let clipboard = new ClipboardJS('#btn');
