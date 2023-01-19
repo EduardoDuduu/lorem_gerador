@@ -9,7 +9,7 @@ document.getElementById("generate-button").onclick = () => {
     let loremIpsumP = generateParagraphLoremIpsum(inputValue);
     let loremIpsumW = generateWordsLoremIpsum(inputValue);
 
-    // Verificando a opção selecionada
+    // Bloco de condicionais para checar a opção selecionada
     if (inputValueParagraph == true) {
         document.getElementById("lorem-ipsum").innerHTML = loremIpsumP;
     } else if (inputValueWord == true) {
@@ -17,11 +17,17 @@ document.getElementById("generate-button").onclick = () => {
     } else {
         document.getElementById("lorem-ipsum").innerHTML = "Escolha um tipo de lorem antes de clicar em Gerar"
     }
+    clipboard.on('error', function (e) {
+        alert('Seu navegador não suporta essa função. Por favor, copie manualmente.');
+    });
+
+    let clipboard = new clipboard('#btn');
 
 
 
-    //-------------------------------------------------------------------------------
 
+
+    // Módulo para gerar os parágrafos
     function generateParagraphLoremIpsum(paragraphs) {
         // Lista de parágrafos Lorem Ipsum
         let loremIpsumParagraphs = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.\n\nProin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.\n\nProin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
@@ -43,6 +49,7 @@ document.getElementById("generate-button").onclick = () => {
         return loremIpsum;
     }
 
+    // Módulo para a criação de palavras
     function generateWordsLoremIpsum(words) {
         // Lista de palavras Lorem Ipsum
         let loremIpsumWords = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
@@ -64,5 +71,3 @@ document.getElementById("generate-button").onclick = () => {
         return loremIpsum;
     }
 }
-
-let clipboard = new ClipboardJS('#btn');
