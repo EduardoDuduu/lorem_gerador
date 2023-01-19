@@ -15,12 +15,23 @@
 
 <body>
     <h1>Gerador de Lorem Ipsum</h1>
+
     <!--Gerar o texto-->
-    <input type="number" name="" id="">
-    <input type="button" value="Gerar">
-    <!--Restante so conteúdo-->
-    
-    <script src="scripts/index-script.js"></script>
+
+    <input type="text" id="chosen-number" required> <!--Número escolhido-->
+
+    <input type="radio" name="selector-type" id="paragraph-select"> <!--Seletor parágrafo-->
+    <label for="paragraph-select">Parágrafos</label>
+    <input type="radio" name="selector-type" id="word-select"> <!--Seletor para palavras-->
+    <label for="word-select">Palavras</label>
+
+    <button type="button" id="generate-button">Gerar</button>
+
+    <div id="lorem-ipsum"></div>
+
+    <!--Restante do conteúdo-->
+
+    <script src="scripts/indexScript.js"></script>
 </body>
 
 </html>
