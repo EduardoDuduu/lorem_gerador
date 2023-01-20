@@ -11,7 +11,7 @@ document.getElementById("generate-button").onclick = () => {
 
     // Clipboard (Copiar o texto)    
     let clipboard = new ClipboardJS('.btn');
-    clipboard.on('error', function (e) {
+    clipboard.on('error', function (_e) {
         alert('Seu navegador não suporta essa função. Por favor, copie manualmente.');
     });
 

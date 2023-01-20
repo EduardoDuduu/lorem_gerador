@@ -23,7 +23,7 @@
     </header>
     <main>
         <label for="chosen-number">Digite abaixo um numero:</label> <br>
-        <input type="text" id="chosen-number" required> <!--Número escolhido-->
+        <input type="number" id="chosen-number" required min="1"> <!--Número escolhido-->
 
         <div id="box-paragraph"> <!--Seletor parágrafo-->
             <input type="radio" name="selector-type" id="paragraph-select">
@@ -34,7 +34,7 @@
             <input type="radio" name="selector-type" id="word-select">
             <label for="word-select">Palavras</label>
         </div>
-
+        
         <div>
             <button type="button" id="generate-button">Gerar</button>
             <!--Botão para copiar o texto-->
@@ -44,12 +44,23 @@
             </button>
         </div>
         <div id="lorem-ipsum"></div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4642090353649937"
+        crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block; text-align:center;"
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-4642090353649937"
+            data-ad-slot="5805502629"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
         <!--Restante do conteúdo-->
 
     </main>
 
-    <footer style="position: relative; bottom: 0; width: 100%;">© Todos os direitos reservados</footer>
+    <footer>© Todos os direitos reservados</footer>
 
     <script src="scripts/indexScript.js"></script>
 </body>
