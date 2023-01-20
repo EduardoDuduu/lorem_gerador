@@ -18,7 +18,7 @@ html, body {
 }
 
 header {
-    width: 620px;
+    max-width: 620px;
     margin: auto;
 }
 
@@ -28,8 +28,8 @@ header h1 {
 }
 
 main {
-    width: 620px;
-    height: 90%;
+    max-width: 620px;
+    height: 80vh;
     margin: auto;
     border-radius: 0px 0px 10px 10px;
     background-color: white;
