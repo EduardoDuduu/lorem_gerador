@@ -9,6 +9,12 @@ document.getElementById("generate-button").onclick = () => {
     let loremIpsumP = generateParagraphLoremIpsum(inputValue);
     let loremIpsumW = generateWordsLoremIpsum(inputValue);
 
+    // Clipboard (Copiar o texto)    
+    let clipboard = new ClipboardJS('.btn');
+    clipboard.on('error', function (e) {
+        alert('Seu navegador não suporta essa função. Por favor, copie manualmente.');
+    });
+
     // Bloco de condicionais para checar a opção selecionada
     if (inputValueParagraph == true) {
         document.getElementById("lorem-ipsum").innerHTML = loremIpsumP;
@@ -17,15 +23,6 @@ document.getElementById("generate-button").onclick = () => {
     } else {
         document.getElementById("lorem-ipsum").innerHTML = "Escolha um tipo de lorem antes de clicar em Gerar"
     }
-    clipboard.on('error', function (e) {
-        alert('Seu navegador não suporta essa função. Por favor, copie manualmente.');
-    });
-
-    let clipboard = new clipboard('#btn');
-
-
-
-
 
     // Módulo para gerar os parágrafos
     function generateParagraphLoremIpsum(paragraphs) {

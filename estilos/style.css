@@ -40,12 +40,12 @@ button {
     margin: auto;
 }
 
-button#btn, button#generate-button {
+button.btn, button#generate-button {
     width: 60px;
     height: 50px;
 }
 
-button#btn > span {
+button.btn > span {
     display: block;
 }
 
