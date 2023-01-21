@@ -4,10 +4,12 @@ document.getElementById("generate-button").onclick = () => {
     let inputValue = document.getElementById("chosen-number").value;
     let inputValueParagraph = document.getElementById("paragraph-select").checked;
     let inputValueWord = document.getElementById("word-select").checked;
+    let inputValuePhrase = document.getElementById("phrase-select").checked;
 
     // Chamando a função generateLoremIpsum
     let loremIpsumP = generateParagraphLoremIpsum(inputValue);
     let loremIpsumW = generateWordsLoremIpsum(inputValue);
+    let loremIpsumF = generatePhrasesLoremIpsum(inputValue);
 
     // Clipboard (Copiar o texto)    
     let clipboard = new ClipboardJS('.btn');
@@ -20,8 +22,10 @@ document.getElementById("generate-button").onclick = () => {
         document.getElementById("lorem-ipsum").innerHTML = loremIpsumP;
     } else if (inputValueWord == true) {
         document.getElementById("lorem-ipsum").innerHTML = loremIpsumW;
+    } else if (inputValuePhrase == true) {
+        document.getElementById("lorem-ipsum").innerHTML = loremIpsumF;
     } else {
-        document.getElementById("lorem-ipsum").innerHTML = "Escolha um tipo de lorem antes de clicar em Gerar"
+        document.getElementById("lorem-ipsum").innerHTML = "<p>Digite um número e escolha o tipo, antes de gerar seu Lorem Ipsum!</p>"
     }
 
     // Módulo para gerar os parágrafos
@@ -63,6 +67,28 @@ document.getElementById("generate-button").onclick = () => {
 
         // Juntando as palavras escolhidas em uma frase
         let loremIpsum = chosenWords.join(" ");
+
+        // Retornando a palavra gerada
+        return loremIpsum;
+    }
+
+    // Módulo para a criação de frases
+    function generatePhrasesLoremIpsum(phrases) {
+        // Lista de frases Lorem Ipsum
+        let loremIpsumPhrases = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
+
+        // Convertendo a lista de frases em um array
+        let loremIpsumPhrasesArray = loremIpsumPhrases.split(".");
+
+        // Escolhendo as frases desejadas
+        let chosenPhrases = [];
+        for (let i = 0; i < phrases; i++) {
+            var randomIndex = Math.floor(Math.random() * loremIpsumPhrasesArray.length);
+            chosenPhrases.push(loremIpsumPhrasesArray[randomIndex]);
+        }
+
+        // Juntando as frases escolhidas em uma frase
+        let loremIpsum = chosenPhrases.join(".");
 
         // Retornando a frase gerada
         return loremIpsum;
