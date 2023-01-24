@@ -20,24 +20,27 @@
 <body>
     <header>
         <h1>Gerador de Lorem Ipsum</h1>
+        <hr>
     </header>
     <main>
-        <label for="chosen-number">Digite abaixo um numero:</label> <br>
-        <input type="number" id="chosen-number" required min="1"> <!--Número escolhido-->
+        <div id="box-num-select"> <!--Caixa com a seleção do número-->
+            <label for="chosen-number">Digite abaixo um numero:</label> <br>
+            <input type="number" id="chosen-number" required min="1">
+        </div>
 
         <div id="box-paragraph"> <!--Seletor parágrafo-->
             <input type="radio" name="selector-type" id="paragraph-select">
             <label for="paragraph-select">Parágrafos</label>
         </div>
 
-        <div id="box-word"> <!--Seletor para palavras-->
-            <input type="radio" name="selector-type" id="word-select">
-            <label for="word-select">Palavras</label>
-        </div>
-
         <div id="box-phrase"> <!--Seletor para frases-->
             <input type="radio" name="selector-type" id="phrase-select">
             <label for="phrase-select">Frases</label> 
+        </div>
+        
+        <div id="box-word"> <!--Seletor para palavras-->
+            <input type="radio" name="selector-type" id="word-select">
+            <label for="word-select">Palavras</label>
         </div>
 
         <div>

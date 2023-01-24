@@ -35,9 +35,22 @@ main {
     background-color: white;
 }
 
-button {
-    display: inline-block;
+div#box-paragraph, div#box-phrase, div#box-word {
+    width: fit-content;
     margin: auto;
+    position: relative;
+}
+
+div#box-paragraph {
+    left: -31px;
+}
+
+div#box-phrase {
+    left: -46px;
+}
+
+div#box-word {
+    left: -39px;
 }
 
 button.btn, button#generate-button {
