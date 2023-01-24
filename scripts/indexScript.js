@@ -74,7 +74,7 @@ document.getElementById("generate-button").onclick = () => {
 
     // Módulo para a criação de frases
     function generatePhrasesLoremIpsum(phrases) {
-        // Lista de frases Lorem Ipsum
+        // Lista de frases Lorem Ipsum 
         let loremIpsumPhrases = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
 
         // Convertendo a lista de frases em um array
