@@ -11,20 +11,26 @@
 html, body {
     width: 100%;
     height: 100%;
-    text-align: center;
+}
+
+html {
     background-image: linear-gradient(to bottom, red, blue);
     background-repeat: no-repeat;
-    background-attachment: fixed; 
+    background-attachment: fixed;
+}
+
+body {
+    text-align: center;
 }
 
 header {
     max-width: 620px;
     margin: auto;
+    background-color: white;
 }
 
 header h1 {
     padding: 10px 0px;
-    background-color: white;
 }
 
 main {
@@ -33,6 +39,22 @@ main {
     margin: auto;
     border-radius: 0px 0px 10px 10px;
     background-color: white;
+}
+
+main div input#chosen-number {
+    max-width: 150px;
+    text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
 }
 
 div#box-paragraph, div#box-phrase, div#box-word {
@@ -53,12 +75,12 @@ div#box-word {
     left: -39px;
 }
 
-button.btn, button#generate-button {
+button#btn, button#generate-button {
     width: 60px;
     height: 50px;
 }
 
-button.btn > span {
+button#btn > span {
     display: block;
 }
 

@@ -19,13 +19,14 @@
 
 <body>
     <header>
-        <h1>Gerador de Lorem Ipsum</h1>
+        <h1>Gere Seu Lipsum</h1>
+        <h2>BEM VINDO</h2>
         <hr>
     </header>
     <main>
         <div id="box-num-select"> <!--Caixa com a seleção do número-->
             <label for="chosen-number">Digite abaixo um numero:</label> <br>
-            <input type="number" id="chosen-number" required min="1">
+            <input type="number" id="chosen-number" value="1" minlength="1" maxlength="100" required>
         </div>
 
         <div id="box-paragraph"> <!--Seletor parágrafo-->
@@ -46,7 +47,7 @@
         <div>
             <button type="button" id="generate-button">Gerar</button>
             <!--Botão para copiar o texto-->
-            <button class="btn" data-clipboard-target="#lorem-ipsum">
+            <button id="btn" data-clipboard-target="#lorem-ipsum">
                 <span class="material-icons md-18"> content_copy </span>
                 Copy
             </button>

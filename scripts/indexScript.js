@@ -11,12 +11,6 @@ document.getElementById("generate-button").onclick = () => {
     let loremIpsumW = generateWordsLoremIpsum(inputValue);
     let loremIpsumF = generatePhrasesLoremIpsum(inputValue);
 
-    // Clipboard (Copiar o texto)    
-    let clipboard = new ClipboardJS('.btn');
-    clipboard.on('error', function (_e) {
-        alert('Seu navegador não suporta essa função. Por favor, copie manualmente.');
-    });
-
     // Bloco de condicionais para checar a opção selecionada
     if (inputValueParagraph == true) {
         document.getElementById("lorem-ipsum").innerHTML = loremIpsumP;
@@ -31,7 +25,7 @@ document.getElementById("generate-button").onclick = () => {
     // Módulo para gerar os parágrafos
     function generateParagraphLoremIpsum(paragraphs) {
         // Lista de parágrafos Lorem Ipsum
-        let loremIpsumParagraphs = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.\n\nProin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.\n\nProin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
+        let loremIpsumParagraphs = loremText;
 
         // Convertendo a lista de parágrafos em um array
         let loremIpsumParagraphsArray = loremIpsumParagraphs.split("\n\n");
@@ -53,7 +47,7 @@ document.getElementById("generate-button").onclick = () => {
     // Módulo para a criação de palavras
     function generateWordsLoremIpsum(words) {
         // Lista de palavras Lorem Ipsum
-        let loremIpsumWords = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
+        let loremIpsumWords = loremText;
 
         // Convertendo a lista de palavras em um array
         let loremIpsumWordsArray = loremIpsumWords.split(" ");
@@ -75,7 +69,7 @@ document.getElementById("generate-button").onclick = () => {
     // Módulo para a criação de frases
     function generatePhrasesLoremIpsum(phrases) {
         // Lista de frases Lorem Ipsum 
-        let loremIpsumPhrases = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
+        let loremIpsumPhrases = loremText;
 
         // Convertendo a lista de frases em um array
         let loremIpsumPhrasesArray = loremIpsumPhrases.split(".");
@@ -94,3 +88,14 @@ document.getElementById("generate-button").onclick = () => {
         return loremIpsum;
     }
 }
+
+document.getElementById("btn").onclick = () => {
+    // Clipboard (Copiar o texto)    
+    let clipboard = new ClipboardJS('#btn');
+    
+    clipboard.on('error', function () {
+        alert('Seu navegador não suporta essa função. Por favor, copie manualmente.');
+    });
+}
+
+const loremText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.\n\nSuspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.\n\nSuspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.\n\nProin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.\n\nProin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.";
