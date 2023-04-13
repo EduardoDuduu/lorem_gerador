@@ -6,7 +6,7 @@ document.getElementById("generate-button").onclick = () => {
     let inputValueWord = document.getElementById("word-select").checked;
     let inputValuePhrase = document.getElementById("phrase-select").checked;
 
-    // Chamando a função generateLoremIpsum
+    // Chamando as funções generateLoremIpsum
     let loremIpsumP = generateParagraphLoremIpsum(inputValue);
     let loremIpsumW = generateWordsLoremIpsum(inputValue);
     let loremIpsumF = generatePhrasesLoremIpsum(inputValue);
